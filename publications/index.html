@@ -90,29 +90,28 @@
 
   <span class="links">
 
-    [<a class="abstract">Abs</a>]
+<!--    [<a class="abstract">Abs</a>]-->
     [<a href="https://openreview.net/pdf?id=06jLJiUAKX" target="">Paper</a>]
     [<a href="https://openreview.net/forum?id=06jLJiUAKX" target="">OpenReview</a>]
     [<a href="" target="_blank">arXiv</a>]
     [<a href=" target="_blank">Slide</a>]
     [<a href="https://github.com/kdmsit/crysmmnet" target="">Code</a>]
-
-      [<a href="" target="_blank">Video</a>]
+    [<a href="" target="_blank">Video</a>]
   </span>
 
   <!-- Hidden abstract block -->
 
-  <span class="abstract hidden">
-    <p>
-        Machine Learning models have emerged as a powerful tool for fast and accurate prediction of different crystalline properties.
-        Exiting state-of-the-art models rely on a single modality of crystal data i.e crystal graph structure, where they construct multi-graph by establishing edges between nearby atoms in 3D space and apply GNN to learn materials representation.
-        Thereby, they encode local chemical semantics around the atoms successfully but fail to capture important global periodic structural information like space group number, crystal symmetry, rotational information etc, which influence different crystal properties.
-        In this work, we leverage textual descriptions of materials to model global structural information into graph structure to learn a more robust and enriched representation of crystalline materials.
-        To this effect, we first curate a textual dataset for crystalline material databases containing descriptions of each material. Further, we propose CrysMMNet, a simple multi-modal framework, which fuses both structural and textual representation together to generate a joint multimodal representation of crystalline materials.
-        We conduct extensive experiments on benchmark datasets across ten different properties to show that CrysMMNet outperforms existing state-of-the-art baseline methods with a good margin. We also observe fusing textual representation with crystal graph structure provides consistent improvement for all the SOTA GNN models compared to their own vanilla version.
-        We are going to share the textual dataset, that we have curated for both the benchmark material databases with the community for future use.
-    </p>
-  </span>
+<!--  <span class="abstract hidden">-->
+<!--    <p>-->
+<!--        Machine Learning models have emerged as a powerful tool for fast and accurate prediction of different crystalline properties.-->
+<!--        Exiting state-of-the-art models rely on a single modality of crystal data i.e crystal graph structure, where they construct multi-graph by establishing edges between nearby atoms in 3D space and apply GNN to learn materials representation.-->
+<!--        Thereby, they encode local chemical semantics around the atoms successfully but fail to capture important global periodic structural information like space group number, crystal symmetry, rotational information etc, which influence different crystal properties.-->
+<!--        In this work, we leverage textual descriptions of materials to model global structural information into graph structure to learn a more robust and enriched representation of crystalline materials.-->
+<!--        To this effect, we first curate a textual dataset for crystalline material databases containing descriptions of each material. Further, we propose CrysMMNet, a simple multi-modal framework, which fuses both structural and textual representation together to generate a joint multimodal representation of crystalline materials.-->
+<!--        We conduct extensive experiments on benchmark datasets across ten different properties to show that CrysMMNet outperforms existing state-of-the-art baseline methods with a good margin. We also observe fusing textual representation with crystal graph structure provides consistent improvement for all the SOTA GNN models compared to their own vanilla version.-->
+<!--        We are going to share the textual dataset, that we have curated for both the benchmark material databases with the community for future use.-->
+<!--    </p>-->
+<!--  </span>-->
 
 </div>
 </li>
@@ -133,26 +132,26 @@
 
   <span class="links">
 
-    [<a class="abstract">Abs</a>]
-    [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/25892" target="_blank">Paper</a>]
+<!--    [<a class="abstract">Abs</a>]-->
+      [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/25892" target="_blank">Paper</a>]
       [<a href="../assets/pdf/AAAI2023/CrysGNN_Slides.pdf" target="_blank">Slide</a>]
-    [<a href="https://github.com/kdmsit/crysgnn.git" target="_blank">Code</a>]
+      [<a href="https://github.com/kdmsit/crysgnn.git" target="_blank">Code</a>]
       [<a href="https://arxiv.org/abs/2301.05852" target="_blank">arXiv</a>]
       [<a href="https://youtu.be/J8rXFUlDrLk" target="_blank">Video</a>]
   </span>
 
   <!-- Hidden abstract block -->
 
-  <span class="abstract hidden">
-    <p>
-        In recent years, graph neural network (GNN) based approaches have emerged as a powerful technique to encode complex topological structure of crystal materials in an enriched representation space.
-        These models are often supervised in nature and using the property-specific training data, learn relationship between crystal structure and different properties like formation energy, bandgap, bulk modulus, etc.
-        Most of these methods require a huge amount of property-tagged data to train the system which may not be available for different properties. However, there is an availability of a huge amoun of crystal data with its chemical composition and structural bonds.
-        To leverage these untapped data, this paper presents CrysGNN, a new pre-trained GNN framework for crystalline materials, which captures both node and graph level structural information of crystal graphs using a huge amount of unlabelled material data.
-        Further, we extract distilled knowledge from CrysGNN and inject into different state of the art property predictors to enhance their property prediction accuracy. We conduct extensive experiments to show that with distilled knowledge from the pre-trained model, all the SOTA algorithms are able to outperform their own vanilla version with good margins.
-        We also observe that the distillation process provides significant improvement over the conventional approach of finetuning the pre-trained model. We will release the pre-trained model along with the large dataset of 800K crystal graph which we carefully curated; so that the pre-trained model can be plugged into any existing and upcoming models to enhance their prediction accuracy.
-    </p>
-  </span>
+<!--  <span class="abstract hidden">-->
+<!--    <p>-->
+<!--        In recent years, graph neural network (GNN) based approaches have emerged as a powerful technique to encode complex topological structure of crystal materials in an enriched representation space.-->
+<!--        These models are often supervised in nature and using the property-specific training data, learn relationship between crystal structure and different properties like formation energy, bandgap, bulk modulus, etc.-->
+<!--        Most of these methods require a huge amount of property-tagged data to train the system which may not be available for different properties. However, there is an availability of a huge amoun of crystal data with its chemical composition and structural bonds.-->
+<!--        To leverage these untapped data, this paper presents CrysGNN, a new pre-trained GNN framework for crystalline materials, which captures both node and graph level structural information of crystal graphs using a huge amount of unlabelled material data.-->
+<!--        Further, we extract distilled knowledge from CrysGNN and inject into different state of the art property predictors to enhance their property prediction accuracy. We conduct extensive experiments to show that with distilled knowledge from the pre-trained model, all the SOTA algorithms are able to outperform their own vanilla version with good margins.-->
+<!--        We also observe that the distillation process provides significant improvement over the conventional approach of finetuning the pre-trained model. We will release the pre-trained model along with the large dataset of 800K crystal graph which we carefully curated; so that the pre-trained model can be plugged into any existing and upcoming models to enhance their prediction accuracy.-->
+<!--    </p>-->
+<!--  </span>-->
 
 </div>
 </li>
@@ -179,7 +178,7 @@
 
   <span class="links">
 
-    [<a class="abstract">Abs</a>]
+<!--    [<a class="abstract">Abs</a>]-->
     [<a href="https://www.nature.com/articles/s41524-022-00716-8.pdf" target="_blank">Paper</a>]
     [<a href="https://github.com/kdmsit/crysxpp.git" target="_blank">Code</a>]
     [<a target="_blank" href="../assets/pdf/CRYSXPP.pdf">Slides</a>]
@@ -190,18 +189,18 @@
 
   <!-- Hidden abstract block -->
 
-  <span class="abstract hidden">
-    <p>
-        We present a deep-learning framework, CrysXPP, to allow rapid prediction of electronic, magnetic and elastic properties of a wide range of materials with reasonable precision.
-        Although our work is consistent with several recent attempts to build deep learning-based property predictors, it overcomes some of their limitations.
-        CrysXPP lowers the need for a large volume of tagged data to train a deep learning model by intelligently designing an autoencoder CrysAE and passing the structural information to the property prediction process.
-        The autoencoder in turn is trained on a huge volume of untagged crystal graphs, the designed loss function helps in capturing all their important structural and chemical information.
-        Moreover, CrysXPP uses only a small amount of tagged data for property prediction, and also trains a feature selector that provides interpretability to the results obtained.
-        We demonstrate that CrysXPP convincingly performs better than all the competing and recent baseline algorithms across seven diverse set of properties.
-        Most notably, when given a small amount of experimental data, CrysXPP is consistently able to outperform conventional DFT.
-        We release the large pretrained model CrysAE so that it could be fine-tuned using small amount of tagged data by the research community on various applications with restricted data source.
-    </p>
-  </span>
+<!--  <span class="abstract hidden">-->
+<!--    <p>-->
+<!--        We present a deep-learning framework, CrysXPP, to allow rapid prediction of electronic, magnetic and elastic properties of a wide range of materials with reasonable precision.-->
+<!--        Although our work is consistent with several recent attempts to build deep learning-based property predictors, it overcomes some of their limitations.-->
+<!--        CrysXPP lowers the need for a large volume of tagged data to train a deep learning model by intelligently designing an autoencoder CrysAE and passing the structural information to the property prediction process.-->
+<!--        The autoencoder in turn is trained on a huge volume of untagged crystal graphs, the designed loss function helps in capturing all their important structural and chemical information.-->
+<!--        Moreover, CrysXPP uses only a small amount of tagged data for property prediction, and also trains a feature selector that provides interpretability to the results obtained.-->
+<!--        We demonstrate that CrysXPP convincingly performs better than all the competing and recent baseline algorithms across seven diverse set of properties.-->
+<!--        Most notably, when given a small amount of experimental data, CrysXPP is consistently able to outperform conventional DFT.-->
+<!--        We release the large pretrained model CrysAE so that it could be fine-tuned using small amount of tagged data by the research community on various applications with restricted data source.-->
+<!--    </p>-->
+<!--  </span>-->
 
 </div>
 </li>
@@ -225,7 +224,7 @@
 
   <span class="links">
   
-    [<a class="abstract">Abs</a>]
+<!--    [<a class="abstract">Abs</a>]-->
     [<a href="https://ieeexplore.ieee.org/abstract/document/9378335" target="_blank">PDF</a>]
     [<a href="https://github.com/kdmsit/HAIN.git" target="_blank">Code</a>]
     [<a class="menulink" target="_blank" href="../assets/pdf/HAIN.pdf">Slides</a>]
@@ -233,15 +232,15 @@
   </span>
   <!-- Hidden abstract block -->
   
-  <span class="abstract hidden">
-    <p> Graph neural networks (GNNs) are able to achieve state-of-the-art performance for node representation and classification in a network.
-        But, most of the existing GNNs can be applied to simple graphs, where an edge connects only a pair of nodes.
-        Studies have shown that hypergraphs are effective to model real-world relationships which are of higher order in nature.
-        Recently, graph neural networks are proposed for hypergraphs, but they implicitly use clique or star expansions to convert the hypergraph to a simple graph, or use computationally expensive hypergraph Laplacian.
-        In this work, we propose a novel hypergraph neural network for semi-supervised hypernode classification, which operates directly on the hypergraphs with varying hyperedge sizes.
-        Within each layer, it indirectly works on the line graph of the given hypergraph, without actually forming the line graph explicitly.
-        Moreover, it also employs a self-attention mechanism to learn the weights of those edge relationships. Experimentally, HAIN is able to improve the state-of-the-art hypernode classification performance on all the datasets we use.</p>
-  </span>
+<!--  <span class="abstract hidden">-->
+<!--    <p> Graph neural networks (GNNs) are able to achieve state-of-the-art performance for node representation and classification in a network.-->
+<!--        But, most of the existing GNNs can be applied to simple graphs, where an edge connects only a pair of nodes.-->
+<!--        Studies have shown that hypergraphs are effective to model real-world relationships which are of higher order in nature.-->
+<!--        Recently, graph neural networks are proposed for hypergraphs, but they implicitly use clique or star expansions to convert the hypergraph to a simple graph, or use computationally expensive hypergraph Laplacian.-->
+<!--        In this work, we propose a novel hypergraph neural network for semi-supervised hypernode classification, which operates directly on the hypergraphs with varying hyperedge sizes.-->
+<!--        Within each layer, it indirectly works on the line graph of the given hypergraph, without actually forming the line graph explicitly.-->
+<!--        Moreover, it also employs a self-attention mechanism to learn the weights of those edge relationships. Experimentally, HAIN is able to improve the state-of-the-art hypernode classification performance on all the datasets we use.</p>-->
+<!--  </span>-->
 </div>
 </li>
 <li>
@@ -260,30 +259,26 @@
 
   <span class="links">
 
-    [<a class="abstract">Abs</a>]
+<!--    [<a class="abstract">Abs</a>]-->
     [<a href="https://arxiv.org/pdf/2002.03392.pdf" target="_blank">PDF</a>]
     [<a href="https://github.com/kdmsit/LHCN.git" target="_blank">Code</a>]
   </span>
   <!-- Hidden abstract block -->
 
-  <span class="abstract hidden">
-    <p> Network representation learning and node classification in graphs got significant attention due to the invent of different types graph neural networks.
-        Graph convolution network (GCN) is a popular semi-supervised technique which aggregates attributes within the neighborhood of each node.
-        Conventional GCNs can be applied to simple graphs where each edge connects only two nodes. But many modern days applications need to model high order relationships in a graph.
-        Hypergraphs are effective data types to handle such complex relationships. In this paper, we propose a novel technique to apply graph convolution on hypergraphs with variable hyperedge sizes.
-        We use the classical concept of line graph of a hypergraph for the first time in the hypergraph learning literature.
-        Then we propose to use graph convolution on the line graph of a hypergraph. Experimental analysis on multiple real world network datasets shows the merit of our approach compared to state-of-the-arts.</p>
-  </span>
+<!--  <span class="abstract hidden">-->
+<!--    <p> Network representation learning and node classification in graphs got significant attention due to the invent of different types graph neural networks.-->
+<!--        Graph convolution network (GCN) is a popular semi-supervised technique which aggregates attributes within the neighborhood of each node.-->
+<!--        Conventional GCNs can be applied to simple graphs where each edge connects only two nodes. But many modern days applications need to model high order relationships in a graph.-->
+<!--        Hypergraphs are effective data types to handle such complex relationships. In this paper, we propose a novel technique to apply graph convolution on hypergraphs with variable hyperedge sizes.-->
+<!--        We use the classical concept of line graph of a hypergraph for the first time in the hypergraph learning literature.-->
+<!--        Then we propose to use graph convolution on the line graph of a hypergraph. Experimental analysis on multiple real world network datasets shows the merit of our approach compared to state-of-the-arts.</p>-->
+<!--  </span>-->
 </div>
 </li>
 </ol>
 
   </article>
-
-  
-
-  
-
+            
 </div>
 
       </div>
