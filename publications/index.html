@@ -1,442 +1,471 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
+<html lang="en">
+<head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width initial-scale=2" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Publications — Kishalay Das</title>
+  <meta name="description" content="Publications by Kishalay Das — Graph Representation Learning, Geometric Deep Learning, AI for Science.">
 
-  <title>Kishalay Das | publications</title>
-  <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
- <link rel="shortcut icon" href="/assets/img/favicon.ico">
+    :root {
+      --bg:        #FAFAF8;
+      --surface:   #F0F4FB;
+      --yale:      #00356b;
+      --yale-light:#4a7fc1;
+      --ink:       #1a1f2e;
+      --muted:     #5a6480;
+      --border:    #dde3f0;
+      --accent:    #c8a84b;
+      --radius:    10px;
+      --max-w:     780px;
+    }
 
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="canonical" href="/">
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--yale);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--yale); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .page-header p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .page-header a {
+      color: var(--yale);
+      text-decoration: none;
+    }
+    .page-header a:hover { text-decoration: underline; }
+
+    /* ── STATS ROW ── */
+    .stats-row {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      text-align: center;
+      min-width: 100px;
+    }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      color: var(--yale);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── YEAR GROUP ── */
+    .year-group { margin-bottom: 48px; }
+    .year-label {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--ink);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .year-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── PAPER CARD ── */
+    .paper-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      margin-bottom: 12px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .paper-card:hover {
+      border-color: var(--yale-light);
+      box-shadow: 0 2px 16px rgba(0,53,107,0.07);
+    }
+
+    .paper-title {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 5px;
+    }
+    .paper-authors {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+    .paper-authors b {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .paper-venue {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .venue-badge {
+      display: inline-block;
+      font-size: 0.73rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 5px;
+      background: var(--yale);
+      color: white;
+      letter-spacing: 0.03em;
+    }
+    .venue-badge.journal {
+      background: #2d6a4f;
+    }
+    .venue-badge.arxiv {
+      background: #7b5c3a;
+    }
+    .venue-also {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── LINKS ── */
+    .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .plink {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      text-decoration: none;
+      transition: border-color 0.18s, color 0.18s, background 0.18s;
+    }
+    .plink:hover {
+      border-color: var(--yale);
+      color: var(--yale);
+      background: var(--surface);
+    }
+    .plink.empty {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--yale); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .stats-row { gap: 12px; }
+      .stat { padding: 10px 14px; min-width: 80px; }
+      .nav-links { gap: 16px; }
+      .paper-card { padding: 16px; }
+    }
+  </style>
 </head>
+<body>
 
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="../index.html">KD</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#" class="active">Publications</a></li>
+        <li><a href="../Education/index.html">Education</a></li>
+        <li><a href="../Experience/index.html">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <body>
+  <main>
 
-    <header class="site-header">
+    <div class="page-header">
+      <h1>Publications</h1>
+      <p>Also available on <a href="https://scholar.google.com/citations?user=AMP0uJsAAAAJ&hl=en" target="_blank">Google Scholar</a> · <a href="https://dblp.org/pid/258/3218.html" target="_blank">DBLP</a> · <a href="https://www.researchgate.net/profile/Kishalay-Das" target="_blank">ResearchGate</a>. &nbsp;* denotes equal contribution.</p>
+    </div>
 
-  <div class="wrapper">
-    <span class="site-title">
-        
-        <strong>Kishalay</strong> Das
-    </span>
-    
-
-    <nav class="site-nav">
-      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-      <div class="trigger">
-        <a class="page-link" href="../index.html">Home</a>
-        <a class="page-link" href="#">Publications</a>
-        <a class="page-link" href="../Education/index.html">Education</a>
-        <a class="page-link" href="../Experience/index.html">Experience</a>
-          <!--<a class="page-link" href="../misc/index.html">Misc</a>-->
-
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num">9</span>
+        <span class="stat-label">Papers</span>
       </div>
-    </nav>
-
-  </div>
-
-</header>
-
-
-
-    <div class="page-content">
-      <div class="wrapper">
-        <div class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">publications</h1>
-    <!-- <h5 class="post-description">Publications by categories in reversed chronological order. Generated by jekyll-scholar.</h5> -->
-  </header>
-
-  <article class="post-content publications clearfix">
-
-      <p> You can also find my articles on my <a target="_blank" href="https://scholar.google.com/citations?user=AMP0uJsAAAAJ&hl=en">Google Scholar profile.</a></p>
-
-
-<h3 class="year">2026</h3>
-<ol class="bibliography">
-
-<li>
-<div id="icml_2026">
-    <span class="title"><strong>Model Agnostic Graph Prompt Learning for Crystal Property Prediction.</strong></span>
-    <span class="author">
-      Shrimon Mukherjee*, <b>Kishalay Das*</b>, Pawan Goyal, Partha Basuchowdhuri and Niloy Ganguly
-    </span>
-
-    <span class="periodical">
-        <em> <b> UAI 2026 </b></em>
-    </span>
-
-  <span class="links">
-    [<a href="" target="">Paper</a>]
-    [<a href="" target="">OpenReview</a>]
-    [<a href="" target="">arXiv</a>]
-    [<a href="" target="">Poster</a>]
-    [<a href="" target="">Code</a>]
-  </span>
-</div>
-</li>
-
-<li>
-<div id="icml_2026">
-    <span class="title"><strong>Latent Diffusion Pretraining for Crystal Property Prediction.</strong></span>
-    <span class="author">
-      Shrimon Mukherjee*, <b>Kishalay Das*</b>, Pawan Goyal, Partha Basuchowdhuri and Niloy Ganguly
-    </span>
-
-    <span class="periodical">
-        <em> <b> ICML 2026, AI4Mat Workshop @ ICLR-2025 </b></em>
-    </span>
-
-  <span class="links">
-    [<a href="" target="">Paper</a>]
-    [<a href="" target="">OpenReview</a>]
-    [<a href="" target="">arXiv</a>]
-    [<a href="" target="">Poster</a>]
-    [<a href="" target="">Code</a>]
-  </span>
-</div>
-</li>
-
-
-</ol>
-
-
-
-
-<h3 class="year">2025</h3>
-<ol class="bibliography">
-
-<li>
-<div id="neurips_2025">
-    <span class="title"><strong>LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation.</strong></span>
-    <span class="author">
-      Subhojyoti Khastagir*, <b>Kishalay Das*</b>, Pawan Goyal, Seung-Cheol Lee, Satadeep Bhattacharjee and Niloy Ganguly
-    </span>
-
-    <span class="periodical">
-
-<!--        <em> <b> NeurIPS 2025 [A*] (acceptance rate -) </b> [Poster] </em>-->
-        <em> <b> NeurIPS 2025 </b></em>
-    </span>
-
-  <span class="links">
-    [<a href="https://arxiv.org/pdf/2510.23040" target="">Paper</a>]
-    [<a href="https://openreview.net/forum?id=E6gwPtWjb1" target="">OpenReview</a>]
-    [<a href="https://arxiv.org/pdf/2510.23040" target="">arXiv</a>]
-    [<a href="../assets/pdf/NeurIPS2025/CrysLLMGen.pdf" target="">Poster</a>]
-    [<a href="https://github.com/kdmsit/crysllmgen" target="">Code</a>]
-  </span>
-</div>
-</li>
-
-<li>
-<div id="iclr_2025">
-    <span class="title"><strong>Periodic Materials Generation using Text-Guided Joint Diffusion Model.</strong></span>
-    <span class="author">
-      <b>Kishalay Das</b>, Subhojyoti Khastagir, Pawan Goyal, Seung-Cheol Lee, Satadeep Bhattacharjee and Niloy Ganguly
-    </span>
-
-    <span class="periodical">
-
-<!--        <em> <b> ICLR 2025 [A*] (acceptance rate of 32.08%) </b> [Poster] </em>-->
-        <em> <b> ICLR 2025 </b></em>
-    </span>
-
-  <span class="links">
-    [<a href="https://arxiv.org/abs/2503.00522" target="">Paper</a>]
-    [<a href="https://openreview.net/pdf?id=AkBrb7yQ0G" target="">OpenReview</a>]
-    [<a href="https://arxiv.org/abs/2503.00522" target="">arXiv</a>]
-    [<a href="../assets/pdf/ICLR2025/ICLR_2025_Poster.pdf" target="">Poster</a>]
-    [<a href="https://github.com/kdmsit/TGDMat" target="">Code</a>]
-    [<a href="https://youtu.be/u0BFqDiOoVs" target="">ICLR Vlog</a>]
-  </span>
-</div>
-</li>
-
-
-</ol>
-
-
-<h3 class="year">2023</h3>
-<ol class="bibliography">
-
-<li>
-<div id="uai_2023">
-    <span class="title"><strong>CrysMMNet: Multimodal Representation for Crystal Property Prediction.</strong></span>
-    <span class="author">
-      <b>Kishalay Das</b>, Pawan Goyal, Seung-Cheol Lee, Satadeep Bhattacharjee and Niloy Ganguly
-    </span>
-
-    <span class="periodical">
-
-<!--        <em> <b> UAI 2023 [A] (acceptance rate of 31%) </b> [Poster] </em>-->
-        <em> <b> UAI 2023 </b></em>
-        <!--<a href="https://www.scimagojr.com/journalsearch.php?q=21100850798&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank"><img border="0" src="https://www.scimagojr.com/journal_img.php?id=21100850798" alt="SCImago Journal &amp; Country Rank"  /></a>-->
-    </span>
-
-
-  <span class="links">
-
-<!--    [<a class="abstract">Abs</a>]-->
-    [<a href="https://proceedings.mlr.press/v216/das23a.html" target="">Paper</a>]
-    [<a href="https://openreview.net/forum?id=06jLJiUAKX" target="">OpenReview</a>]
-    [<a href="https://arxiv.org/pdf/2307.05390.pdf" target="_blank">arXiv</a>]
-    [<a href="../assets/pdf/UAI2023/605_das.pdf" target="">Poster</a>]
-    [<a href="https://github.com/kdmsit/crysmmnet" target="">Code</a>]
-    [<a href="https://youtu.be/dJSCCG31mEI" target="">UAI Vlog</a>]
-  </span>
-
-  <!-- Hidden abstract block -->
-
-<!--  <span class="abstract hidden">-->
-<!--    <p>-->
-<!--        Machine Learning models have emerged as a powerful tool for fast and accurate prediction of different crystalline properties.-->
-<!--        Exiting state-of-the-art models rely on a single modality of crystal data i.e crystal graph structure, where they construct multi-graph by establishing edges between nearby atoms in 3D space and apply GNN to learn materials representation.-->
-<!--        Thereby, they encode local chemical semantics around the atoms successfully but fail to capture important global periodic structural information like space group number, crystal symmetry, rotational information etc, which influence different crystal properties.-->
-<!--        In this work, we leverage textual descriptions of materials to model global structural information into graph structure to learn a more robust and enriched representation of crystalline materials.-->
-<!--        To this effect, we first curate a textual dataset for crystalline material databases containing descriptions of each material. Further, we propose CrysMMNet, a simple multi-modal framework, which fuses both structural and textual representation together to generate a joint multimodal representation of crystalline materials.-->
-<!--        We conduct extensive experiments on benchmark datasets across ten different properties to show that CrysMMNet outperforms existing state-of-the-art baseline methods with a good margin. We also observe fusing textual representation with crystal graph structure provides consistent improvement for all the SOTA GNN models compared to their own vanilla version.-->
-<!--        We are going to share the textual dataset, that we have curated for both the benchmark material databases with the community for future use.-->
-<!--    </p>-->
-<!--  </span>-->
-
-</div>
-</li>
-
-<li>
-<div id="aaai_2023">
-    <span class="title"><strong>CrysGNN : Distilling pre-trained knowledge to enhance property prediction for crystalline materials.</strong></span>
-    <span class="author">
-      <b>Kishalay Das</b>, Bidisha Samanta, Pawan Goyal, Seung-Cheol Lee, Satadeep Bhattacharjee and Niloy Ganguly
-    </span>
-
-    <span class="periodical">
-
-<!--        <em> AAAI 2023.[Oral Presentation] <b> (acceptance rate of 19.6%) </b>, ML4Materials Workshop @ ICLR-2023  </em>-->
-        <em> <b> AAAI 2023,  ML4Materials Workshop @ ICLR-2023 </b> </em>
-        <!--<a href="https://www.scimagojr.com/journalsearch.php?q=21100850798&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank"><img border="0" src="https://www.scimagojr.com/journal_img.php?id=21100850798" alt="SCImago Journal &amp; Country Rank"  /></a>-->
-    </span>
-
-
-  <span class="links">
-
-<!--    [<a class="abstract">Abs</a>]-->
-      [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/25892" target="_blank">Paper</a>]
-      [<a href="../assets/pdf/AAAI2023/CrysGNN_Slides.pdf" target="_blank">Slide</a>]
-      [<a href="https://github.com/kdmsit/crysgnn.git" target="_blank">Code</a>]
-      [<a href="../assets/pdf/AAAI2023/CrysGNN_AAAI2023_poster.pdf" target="_blank">Poster</a>]
-      [<a href="https://arxiv.org/abs/2301.05852" target="_blank">arXiv</a>]
-      [<a href="https://youtu.be/J8rXFUlDrLk" target="_blank">Video</a>]
-  </span>
-
-  <!-- Hidden abstract block -->
-
-<!--  <span class="abstract hidden">-->
-<!--    <p>-->
-<!--        In recent years, graph neural network (GNN) based approaches have emerged as a powerful technique to encode complex topological structure of crystal materials in an enriched representation space.-->
-<!--        These models are often supervised in nature and using the property-specific training data, learn relationship between crystal structure and different properties like formation energy, bandgap, bulk modulus, etc.-->
-<!--        Most of these methods require a huge amount of property-tagged data to train the system which may not be available for different properties. However, there is an availability of a huge amoun of crystal data with its chemical composition and structural bonds.-->
-<!--        To leverage these untapped data, this paper presents CrysGNN, a new pre-trained GNN framework for crystalline materials, which captures both node and graph level structural information of crystal graphs using a huge amount of unlabelled material data.-->
-<!--        Further, we extract distilled knowledge from CrysGNN and inject into different state of the art property predictors to enhance their property prediction accuracy. We conduct extensive experiments to show that with distilled knowledge from the pre-trained model, all the SOTA algorithms are able to outperform their own vanilla version with good margins.-->
-<!--        We also observe that the distillation process provides significant improvement over the conventional approach of finetuning the pre-trained model. We will release the pre-trained model along with the large dataset of 800K crystal graph which we carefully curated; so that the pre-trained model can be plugged into any existing and upcoming models to enhance their prediction accuracy.-->
-<!--    </p>-->
-<!--  </span>-->
-
-</div>
-</li>
-
-
-</ol>
-
-<h3 class="year">2022</h3>
-<ol class="bibliography">
-<li>
-<div id="year_2022">
-
-    <span class="title"><strong>CrysXPP: An Explainable Property Predictor for Crystalline Material</strong></span>
-    <span class="author">
-      <b>Kishalay Das</b>, Bidisha Samanta, Pawan Goyal, Seung-Cheol Lee, Satadeep Bhattacharjee and Niloy Ganguly
-    </span>
-
-    <span class="periodical">
-
-        <em> <b> NPJ Computational Materials (Nature) Journal,2022.  (Impact Factor: 13.2) </b> </em>
-        <!--<a href="https://www.scimagojr.com/journalsearch.php?q=21100850798&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank"><img border="0" src="https://www.scimagojr.com/journal_img.php?id=21100850798" alt="SCImago Journal &amp; Country Rank"  /></a>-->
-    </span>
-
-
-  <span class="links">
-
-<!--    [<a class="abstract">Abs</a>]-->
-    [<a href="https://www.nature.com/articles/s41524-022-00716-8.pdf" target="_blank">Paper</a>]
-    [<a href="https://github.com/kdmsit/crysxpp.git" target="_blank">Code</a>]
-    [<a target="_blank" href="../assets/pdf/CRYSXPP.pdf">Slides</a>]
-    [<a href="https://www.youtube.com/watch?v=Kyrpj9cSkkM" target="_blank" >Video</a>]
-    [<a href="https://medium.com/@cnerg.iitkgp/crysxpp-an-explainable-property-predictor-for-crystalline-materials-28d90cef13f3" target="_blank" >Blog</a>]
-    [<a href="https://cnerg-iitkgp.github.io/ml/crysxpp/" target="_blank" >Page</a>]
-  </span>
-
-  <!-- Hidden abstract block -->
-
-<!--  <span class="abstract hidden">-->
-<!--    <p>-->
-<!--        We present a deep-learning framework, CrysXPP, to allow rapid prediction of electronic, magnetic and elastic properties of a wide range of materials with reasonable precision.-->
-<!--        Although our work is consistent with several recent attempts to build deep learning-based property predictors, it overcomes some of their limitations.-->
-<!--        CrysXPP lowers the need for a large volume of tagged data to train a deep learning model by intelligently designing an autoencoder CrysAE and passing the structural information to the property prediction process.-->
-<!--        The autoencoder in turn is trained on a huge volume of untagged crystal graphs, the designed loss function helps in capturing all their important structural and chemical information.-->
-<!--        Moreover, CrysXPP uses only a small amount of tagged data for property prediction, and also trains a feature selector that provides interpretability to the results obtained.-->
-<!--        We demonstrate that CrysXPP convincingly performs better than all the competing and recent baseline algorithms across seven diverse set of properties.-->
-<!--        Most notably, when given a small amount of experimental data, CrysXPP is consistently able to outperform conventional DFT.-->
-<!--        We release the large pretrained model CrysAE so that it could be fine-tuned using small amount of tagged data by the research community on various applications with restricted data source.-->
-<!--    </p>-->
-<!--  </span>-->
-
-</div>
-</li>
-</ol>
-
-
-<h3 class="year">2020</h3>
-<ol class="bibliography"><li>
-<div id="year_2020">
-  
-    <span class="title"><strong>Hypergraph Attention Isomorphism Network by Learning Line Graph Expansion</strong></span>
-    <span class="author">
-        Sambaran Bandyopadhyay, <b>Kishalay Das</b>, and M Narasimha Murty
-    </span>
-
-    <span class="periodical">
-    
-      <em>IEEE International Conference on Big Data,</em> 2020
-    
-    </span>
-
-  <span class="links">
-  
-<!--    [<a class="abstract">Abs</a>]-->
-    [<a href="https://ieeexplore.ieee.org/abstract/document/9378335" target="_blank">PDF</a>]
-    [<a href="https://github.com/kdmsit/HAIN.git" target="_blank">Code</a>]
-    [<a class="menulink" target="_blank" href="../assets/pdf/HAIN.pdf">Slides</a>]
-    [<a href="https://www.youtube.com/watch?v=33XLw6LyoVU" target="_blank">Video</a>]
-  </span>
-  <!-- Hidden abstract block -->
-  
-<!--  <span class="abstract hidden">-->
-<!--    <p> Graph neural networks (GNNs) are able to achieve state-of-the-art performance for node representation and classification in a network.-->
-<!--        But, most of the existing GNNs can be applied to simple graphs, where an edge connects only a pair of nodes.-->
-<!--        Studies have shown that hypergraphs are effective to model real-world relationships which are of higher order in nature.-->
-<!--        Recently, graph neural networks are proposed for hypergraphs, but they implicitly use clique or star expansions to convert the hypergraph to a simple graph, or use computationally expensive hypergraph Laplacian.-->
-<!--        In this work, we propose a novel hypergraph neural network for semi-supervised hypernode classification, which operates directly on the hypergraphs with varying hyperedge sizes.-->
-<!--        Within each layer, it indirectly works on the line graph of the given hypergraph, without actually forming the line graph explicitly.-->
-<!--        Moreover, it also employs a self-attention mechanism to learn the weights of those edge relationships. Experimentally, HAIN is able to improve the state-of-the-art hypernode classification performance on all the datasets we use.</p>-->
-<!--  </span>-->
-</div>
-</li>
-<li>
-<div id="year_2020">
-
-    <span class="title"><strong>Line Hypergraph Convolution Network: Applying Graph Convolution for Hypergraphs</strong></span>
-    <span class="author">
-        Sambaran Bandyopadhyay, <b>Kishalay Das</b>, and M Narasimha Murty
-    </span>
-
-    <span class="periodical">
-
-      <em>arXiv,</em> 2020
-
-    </span>
-
-  <span class="links">
-
-<!--    [<a class="abstract">Abs</a>]-->
-    [<a href="https://arxiv.org/pdf/2002.03392.pdf" target="_blank">PDF</a>]
-    [<a href="https://github.com/kdmsit/LHCN.git" target="_blank">Code</a>]
-  </span>
-  <!-- Hidden abstract block -->
-
-<!--  <span class="abstract hidden">-->
-<!--    <p> Network representation learning and node classification in graphs got significant attention due to the invent of different types graph neural networks.-->
-<!--        Graph convolution network (GCN) is a popular semi-supervised technique which aggregates attributes within the neighborhood of each node.-->
-<!--        Conventional GCNs can be applied to simple graphs where each edge connects only two nodes. But many modern days applications need to model high order relationships in a graph.-->
-<!--        Hypergraphs are effective data types to handle such complex relationships. In this paper, we propose a novel technique to apply graph convolution on hypergraphs with variable hyperedge sizes.-->
-<!--        We use the classical concept of line graph of a hypergraph for the first time in the hypergraph learning literature.-->
-<!--        Then we propose to use graph convolution on the line graph of a hypergraph. Experimental analysis on multiple real world network datasets shows the merit of our approach compared to state-of-the-arts.</p>-->
-<!--  </span>-->
-</div>
-</li>
-</ol>
-
-  </article>
-
-</div>
-
+      <div class="stat">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Top Venues</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">1</span>
+        <span class="stat-label">Nature Journal</span>
       </div>
     </div>
 
+    <!-- ── 2026 ── -->
+    <div class="year-group">
+      <div class="year-label">2026</div>
+
+      <div class="paper-card">
+        <div class="paper-title">Model Agnostic Graph Prompt Learning for Crystal Property Prediction</div>
+        <div class="paper-authors">Shrimon Mukherjee*, <b>Kishalay Das*</b>, Pawan Goyal, Partha Basuchowdhuri and Niloy Ganguly</div>
+        <div class="paper-venue">
+          <span class="venue-badge">UAI 2026</span>
+        </div>
+        <div class="paper-links">
+          <a class="plink empty" href="">Paper</a>
+          <a class="plink empty" href="">OpenReview</a>
+          <a class="plink empty" href="">arXiv</a>
+          <a class="plink empty" href="">Poster</a>
+          <a class="plink empty" href="">Code</a>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-title">Latent Diffusion Pretraining for Crystal Property Prediction</div>
+        <div class="paper-authors">Shrimon Mukherjee*, <b>Kishalay Das*</b>, Pawan Goyal, Partha Basuchowdhuri and Niloy Ganguly</div>
+        <div class="paper-venue">
+          <span class="venue-badge">ICML 2026</span>
+          <span class="venue-also">· AI4Mat Workshop @ ICLR 2025</span>
+        </div>
+        <div class="paper-links">
+          <a class="plink empty" href="">Paper</a>
+          <a class="plink empty" href="">OpenReview</a>
+          <a class="plink empty" href="">arXiv</a>
+          <a class="plink empty" href="">Poster</a>
+          <a class="plink empty" href="">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2025 ── -->
+    <div class="year-group">
+      <div class="year-label">2025</div>
+
+      <div class="paper-card">
+        <div class="paper-title">LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation</div>
+        <div class="paper-authors">Subhojyoti Khastagir*, <b>Kishalay Das*</b>, Pawan Goyal, Seung-Cheol Lee, Satadeep Bhattacharjee and Niloy Ganguly</div>
+        <div class="paper-venue">
+          <span class="venue-badge">NeurIPS 2025</span>
+        </div>
+        <div class="paper-links">
+          <a class="plink" href="https://arxiv.org/pdf/2510.23040" target="_blank">Paper</a>
+          <a class="plink" href="https://openreview.net/forum?id=E6gwPtWjb1" target="_blank">OpenReview</a>
+          <a class="plink" href="https://arxiv.org/pdf/2510.23040" target="_blank">arXiv</a>
+          <a class="plink" href="../assets/pdf/NeurIPS2025/CrysLLMGen.pdf" target="_blank">Poster</a>
+          <a class="plink" href="https://github.com/kdmsit/crysllmgen" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-title">Periodic Materials Generation using Text-Guided Joint Diffusion Model</div>
+        <div class="paper-authors"><b>Kishalay Das</b>, Subhojyoti Khastagir, Pawan Goyal, Seung-Cheol Lee, Satadeep Bhattacharjee and Niloy Ganguly</div>
+        <div class="paper-venue">
+          <span class="venue-badge">ICLR 2025</span>
+        </div>
+        <div class="paper-links">
+          <a class="plink" href="https://arxiv.org/abs/2503.00522" target="_blank">Paper</a>
+          <a class="plink" href="https://openreview.net/pdf?id=AkBrb7yQ0G" target="_blank">OpenReview</a>
+          <a class="plink" href="https://arxiv.org/abs/2503.00522" target="_blank">arXiv</a>
+          <a class="plink" href="../assets/pdf/ICLR2025/ICLR_2025_Poster.pdf" target="_blank">Poster</a>
+          <a class="plink" href="https://github.com/kdmsit/TGDMat" target="_blank">Code</a>
+          <a class="plink" href="https://youtu.be/u0BFqDiOoVs" target="_blank">Vlog</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2023 ── -->
+    <div class="year-group">
+      <div class="year-label">2023</div>
+
+      <div class="paper-card">
+        <div class="paper-title">CrysMMNet: Multimodal Representation for Crystal Property Prediction</div>
+        <div class="paper-authors"><b>Kishalay Das</b>, Pawan Goyal, Seung-Cheol Lee, Satadeep Bhattacharjee and Niloy Ganguly</div>
+        <div class="paper-venue">
+          <span class="venue-badge">UAI 2023</span>
+        </div>
+        <div class="paper-links">
+          <a class="plink" href="https://proceedings.mlr.press/v216/das23a.html" target="_blank">Paper</a>
+          <a class="plink" href="https://openreview.net/forum?id=06jLJiUAKX" target="_blank">OpenReview</a>
+          <a class="plink" href="https://arxiv.org/pdf/2307.05390.pdf" target="_blank">arXiv</a>
+          <a class="plink" href="../assets/pdf/UAI2023/605_das.pdf" target="_blank">Poster</a>
+          <a class="plink" href="https://github.com/kdmsit/crysmmnet" target="_blank">Code</a>
+          <a class="plink" href="https://youtu.be/dJSCCG31mEI" target="_blank">Vlog</a>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-title">CrysGNN: Distilling Pre-trained Knowledge to Enhance Property Prediction for Crystalline Materials</div>
+        <div class="paper-authors"><b>Kishalay Das</b>, Bidisha Samanta, Pawan Goyal, Seung-Cheol Lee, Satadeep Bhattacharjee and Niloy Ganguly</div>
+        <div class="paper-venue">
+          <span class="venue-badge">AAAI 2023</span>
+          <span class="venue-also">· ML4Materials Workshop @ ICLR 2023</span>
+        </div>
+        <div class="paper-links">
+          <a class="plink" href="https://ojs.aaai.org/index.php/AAAI/article/view/25892" target="_blank">Paper</a>
+          <a class="plink" href="https://arxiv.org/abs/2301.05852" target="_blank">arXiv</a>
+          <a class="plink" href="../assets/pdf/AAAI2023/CrysGNN_Slides.pdf" target="_blank">Slides</a>
+          <a class="plink" href="../assets/pdf/AAAI2023/CrysGNN_AAAI2023_poster.pdf" target="_blank">Poster</a>
+          <a class="plink" href="https://github.com/kdmsit/crysgnn.git" target="_blank">Code</a>
+          <a class="plink" href="https://youtu.be/J8rXFUlDrLk" target="_blank">Video</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2022 ── -->
+    <div class="year-group">
+      <div class="year-label">2022</div>
+
+      <div class="paper-card">
+        <div class="paper-title">CrysXPP: An Explainable Property Predictor for Crystalline Material</div>
+        <div class="paper-authors"><b>Kishalay Das</b>, Bidisha Samanta, Pawan Goyal, Seung-Cheol Lee, Satadeep Bhattacharjee and Niloy Ganguly</div>
+        <div class="paper-venue">
+          <span class="venue-badge journal">npj Computational Materials</span>
+          <span class="venue-also">· Nature, 2022 &nbsp;·&nbsp; Impact Factor: 13.2</span>
+        </div>
+        <div class="paper-links">
+          <a class="plink" href="https://www.nature.com/articles/s41524-022-00716-8.pdf" target="_blank">Paper</a>
+          <a class="plink" href="../assets/pdf/CRYSXPP.pdf" target="_blank">Slides</a>
+          <a class="plink" href="https://github.com/kdmsit/crysxpp.git" target="_blank">Code</a>
+          <a class="plink" href="https://www.youtube.com/watch?v=Kyrpj9cSkkM" target="_blank">Video</a>
+          <a class="plink" href="https://medium.com/@cnerg.iitkgp/crysxpp-an-explainable-property-predictor-for-crystalline-materials-28d90cef13f3" target="_blank">Blog</a>
+          <a class="plink" href="https://cnerg-iitkgp.github.io/ml/crysxpp/" target="_blank">Project Page</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2020 ── -->
+    <div class="year-group">
+      <div class="year-label">2020</div>
+
+      <div class="paper-card">
+        <div class="paper-title">Hypergraph Attention Isomorphism Network by Learning Line Graph Expansion</div>
+        <div class="paper-authors">Sambaran Bandyopadhyay, <b>Kishalay Das</b>, and M. Narasimha Murty</div>
+        <div class="paper-venue">
+          <span class="venue-badge">IEEE BigData 2020</span>
+        </div>
+        <div class="paper-links">
+          <a class="plink" href="https://ieeexplore.ieee.org/abstract/document/9378335" target="_blank">Paper</a>
+          <a class="plink" href="../assets/pdf/HAIN.pdf" target="_blank">Slides</a>
+          <a class="plink" href="https://github.com/kdmsit/HAIN.git" target="_blank">Code</a>
+          <a class="plink" href="https://www.youtube.com/watch?v=33XLw6LyoVU" target="_blank">Video</a>
+        </div>
+      </div>
+
+      <div class="paper-card">
+        <div class="paper-title">Line Hypergraph Convolution Network: Applying Graph Convolution for Hypergraphs</div>
+        <div class="paper-authors">Sambaran Bandyopadhyay, <b>Kishalay Das</b>, and M. Narasimha Murty</div>
+        <div class="paper-venue">
+          <span class="venue-badge arxiv">arXiv 2020</span>
+        </div>
+        <div class="paper-links">
+          <a class="plink" href="https://arxiv.org/pdf/2002.03392.pdf" target="_blank">PDF</a>
+          <a class="plink" href="https://github.com/kdmsit/LHCN.git" target="_blank">Code</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
   <footer>
-        <tfoot align="center">
-        <a href="https://clustrmaps.com/site/1bidq" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=INowEJFFw80_haaM45UlFC2Wib1YCxnVpH-8ZxPx_0Y&cl=ffffff" width="20" height="10"></a>
-        @ Copyright 2021 Kishalay Das.
-        Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-    </tfoot>
-    </footer>
+    <a href="https://clustrmaps.com/site/1bidq" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=INowEJFFw80_haaM45UlFC2Wib1YCxnVpH-8ZxPx_0Y&cl=ffffff" width="20" height="10" alt="Visitor map"></a>
+    <br>
+    &copy; 2026 Kishalay Das &nbsp;·&nbsp;
+    Built with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> &amp;
+    <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a>
+  </footer>
 
-
-    <!-- Load jQuery -->
-<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
-
-<!-- Load Common JS -->
-<script src="/assets/js/common.js"></script>
-
-
-<!-- Load KaTeX -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
-<script src="http://localhost:4000/al-folio/assets/js/katex.js"></script>
-
-
-
-
-<!-- Include custom icon fonts -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
-<link rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Inconsolata">
-
-
-<!-- Google Analytics -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-XXXXXXXXX', 'auto');
-ga('send', 'pageview');
-</script>
-
-
-
-  </body>
-
+</body>
 </html>

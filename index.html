@@ -1,297 +1,445 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
+<html lang="en">
+<head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Kishalay Das — Postdoc, Yale University</title>
+  <meta name="description" content="Kishalay Das — Postdoctoral Associate at Yale University. Graph Representation Learning, Geometric Deep Learning, AI for Science.">
 
-  <title>Kishalay Das</title>
-  <meta name="description" content="Research Associate,IIT Kharagpur
-">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!--<link rel="shortcut icon" href="https://www.cse.iitb.ac.in/~awasthi/assets/img/favicon.ico">-->
-  <link rel="stylesheet" href="assets/css/main.css">
-  <!--<link rel="canonical" href="https://www.cse.iitb.ac.in/~awasthi/">-->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #FAFAF8;
+      --surface:   #F0F4FB;
+      --yale:      #00356b;
+      --yale-light:#4a7fc1;
+      --ink:       #1a1f2e;
+      --muted:     #5a6480;
+      --border:    #dde3f0;
+      --accent:    #c8a84b;
+      --radius:    10px;
+      --max-w:     760px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--yale);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--yale); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 168px;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 56px;
+    }
+    .hero-text h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .hero-text .bengali {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+    .hero-text .position {
+      font-size: 1rem;
+      color: var(--yale);
+      font-weight: 500;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .position-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero-photo {
+      width: 168px; height: 168px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0,53,107,0.08);
+    }
+
+    /* ── LINKS ROW ── */
+    .links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 13px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .pill:hover { border-color: var(--yale); color: var(--yale); background: var(--surface); }
+    .pill svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ── SECTIONS ── */
+    section { margin-bottom: 52px; }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.45rem;
+      color: var(--ink);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    p { margin-bottom: 14px; color: var(--ink); }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--yale); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    b { font-weight: 600; }
+
+    /* ── RESEARCH TAGS ── */
+    .research-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .tag {
+      padding: 4px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--yale);
+      font-weight: 500;
+    }
+
+    /* ── HIGHLIGHTS (timeline) ── */
+    .highlights-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .highlight-item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 0 20px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .highlight-item:last-child { border-bottom: none; }
+    .hi-date {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-top: 2px;
+    }
+    .hi-text { font-size: 0.93rem; color: var(--ink); line-height: 1.6; }
+    .hi-text a { color: var(--yale); }
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--yale);
+      color: white;
+      margin-left: 4px;
+      vertical-align: middle;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── SERVICE ── */
+    .service-block { margin-bottom: 14px; }
+    .service-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .service-text { font-size: 0.93rem; color: var(--ink); }
+
+    /* ── CONTACT ── */
+    .contact-line {
+      font-size: 0.93rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .contact-line a { color: var(--yale); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--yale); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { width: 120px; height: 120px; order: -1; }
+      .hero-text h1 { font-size: 2rem; }
+      .highlight-item { grid-template-columns: 80px 1fr; }
+      .nav-links { gap: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .position-dot { animation: none; }
+    }
+  </style>
 </head>
+<body>
 
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">KD</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="publications/index.html">Publications</a></li>
+        <li><a href="Education/index.html">Education</a></li>
+        <li><a href="Experience/index.html">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <body>
+  <main>
 
-    <header class="site-header">
-
-    <div class="wrapper">
-    <nav class="site-nav">
-      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="20px" height="15px">
-              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-      <div class="trigger">
-        <a class="page-link" href="index.html">Home</a>
-        <a class="page-link" href="publications/index.html">Publications</a>
-        <a class="page-link" href="Education/index.html">Education</a>
-        <a class="page-link" href="Experience/index.html">Experience</a>
-        <!--<a class="page-link" href="misc/index.html">Misc</a>-->
-
-      </div>
-    </nav>
-
-  </div>
-
-    </header>
-
-
-
-    <div class="page-content">
-      <div class="wrapper">
-        <div class="post">
-            <header class="post-header">
-              <h1 class="post-title">Kishalay Das</h1>
-              <h5 class="post-description">Postdoc at Yale University<br/></h5>
-            </header>
-             <article class="post-content Abhijeet Awasthi clearfix">
-              <div class="profile col one right">
-<!--                  <img class="one" src="assets/img/profile.jpg">-->
-                  <img class="one" src="assets/img/KD_2.jpeg">
-              </div>
-              Hola Amigos,<br>
-                <p>
-I’m <b>Kishalay Das (কিশলয় দাস)</b>. “Kishalay” in Bengali refers to the tender new leaves of spring, symbolizing growth and new beginnings. If pronunciation feels tricky, feel free to call me <b>KD</b>.
-</p>
-
-<p>
-I am currently a <b>Postdoctoral Associate</b> at <b>Yale University</b>, where I work under the supervision of
-<a href="https://krishnaswamylab.org/" target="_blank">Smita Krishnaswamy</a>.
-</p>
-
-<p>
-Prior to this, I was a <b>Prime Minister’s Research Fellow (PMRF)</b> at the
-<b>Indian Institute of Technology, Kharagpur (2020–2026)</b>, as part of the
-<a href="https://cnerg-iitkgp.github.io/" target="_blank">Complex Networks Research Group (CNeRG)</a>.
-During this time, I had the privilege of being advised by
-<a href="http://www.facweb.iitkgp.ac.in/~niloy/" target="_blank">Prof. Niloy Ganguly</a> and
-<a href="http://cse.iitkgp.ac.in/~pawang/" target="_blank">Prof. Pawan Goyal</a>.
-</p>
-
-<p>
-I completed my <b>M.Tech (2020)</b> from the
-<a href="https://www.csa.iisc.ac.in/" target="_blank">Department of Computer Science and Automation (CSA)</a>,
-<b>Indian Institute of Science (IISc), Bangalore</b>, where I worked with
-<a href="https://www.csa.iisc.ac.in/people/people-faculty-mnm.html" target="_blank">Prof. M. N. Murty</a>
-on representation learning for graphs and hypergraphs. I obtained my <b>B.Tech (2012)</b> from
-<a href="https://msit.edu.in/" target="_blank">Meghnad Saha Institute of Technology</a>, Kolkata.
-</p>
-
-<p>
-Before pursuing my M.Tech, I gained industry and research experience working with
-<a href="https://www.isro.gov.in/" target="_blank">Indian Space Research Organisation (ISRO)</a>,
-Tata Consultancy Services, and Accenture.
-</p>
-
-<p>
-My research lies at the intersection of <b>Graph Representation Learning, Geometric Deep Learning, and Generative Modeling</b>,
-with a strong emphasis on <b>AI for Science</b> and <b>AI for Medicine</b>.
-</p>
-                <!--My doctoral research centers on developing <b>AI methods for 3D material generation and property prediction</b>. Learn about my research: <a href="assets/pdf/Research_Statement_Kishalay_Das.pdf" target="_blank"><b>Research Statement.</b></a><br><br>-->
-                <!--Currently, I am pursuing Ph.D. at <a href="https://cnerg-iitkgp.github.io/" target="_blank">Complex Networks Research Group (CNeRG)</a>,  IIT-Kharagpur, under supervision of <a href="http://www.facweb.iitkgp.ac.in/~niloy/" target="_blank">Prof. Niloy Ganguly</a> and <a href="http://cse.iitkgp.ac.in/~pawang/" target="_blank">Prof. Pawan Goyal</a>.<br>-->
-                <!--Here my work is centered around developing explainable property predictors for crystalline materials using graph neural network and discovering strategies to train the model with low resource data.<br>-->
-
-                In my free time, I create educational content on YouTube: <a class="menulink" target="_blank" href="https://youtube.com/user/kishalaydas"><b>My Youtube Channel.</b> </a><br><br>
-                Feel free to connect me at <a href="kishalay.msit@gmail.com" target="_blank">kishalay[dot]msit[at]gmail[dot]com</a>.
-
-                </span><br><br>
-
-               <a class="menulink" target="_blank" href="https://scholar.google.com/citations?user=AMP0uJsAAAAJ&hl=en">Google Scholar </a><span class="tagsep">|</span>
-                 <a class="menulink" target="_blank" href="https://www.researchgate.net/profile/Kishalay-Das">Research Gate </a><span class="tagsep">|</span>
-               <a class="menulink" target="_blank" href="https://dblp.org/pid/258/3218.html">DBLP </a><span class="tagsep">|</span>
-               <a class="menulink" target="_blank" href="https://www.linkedin.com/in/kishalay-das-kd-309850143/">LinkedIn </a><span class="tagsep">|</span>
-               <a class="menulink" target="_blank" href="https://github.com/kdmsit">Github </a><span class="tagsep">|</span>
-               <a class="menulink" target="_blank" href="https://sharingmyexperiencesite.wordpress.com/">Blog </a><span class="tagsep">|</span>
-               <a class="menulink" target="_blank" href="assets/pdf/Kishalay_Das_CV.pdf">CV </a>|</span>
-                 <a class="menulink" target="_blank" href="https://youtube.com/user/kishalaydas">Youtube</a>
-            </article>
-             <div class="social">
-                 <h2>PC Committee</h2>
-                    <ul>
-                        <li>
-                            <b>Program Committee (PC) Member:</b> IJCAI 2025, AAAI 2026, AAAI 2025
-                        </li>
-                        <li>
-                            <b>Reviewer:</b> ICML 2026; ICLR 2026, 2025; KDD 2026, 2024; LoG 2025, 2024; NeurIPS 2025; AAAI 2024
-                        </li>
-<!--                        <li> Reviewer at AI4Mat@ICLR'26, AI4Mat@NeurIPS'25, ML4Materials@ ICLR'25, AI4Mat@NeurIPS'24, TGL@NeurIPS'23, ML4Materials@ ICLR'23 workshops</li>-->
-                    </ul>
-
-            </div>
-
-            <div class="news">
-                    <h2>Highlights</h2>
-                    <ul>
-                        <li><b>May, 2026</b> Our work <b>CrysPrompt</b> Accepted at <a href="https://www.auai.org/uai2026/" target="_blank">UAI 2026</a></li>
-                        <li><b>Apr, 2026</b> Our work <b>CrysLDNet</b> Accepted at <a href="https://icml.cc/" target="_blank">ICML 2026</a></li>
-                        <li><b>Apr, 2026</b> Joined Yale University as PostDoc at <a href="https://krishnaswamylab.org/" target="_blank">Smita Krishnaswamy Lab</a></li>
-                        <li><b>Jan, 2026</b> Defended Ph.D. Thesis, Officially <b>Dr. Kishalay</b></li>
-                        <li><b>Sep, 2025</b> Our work <b>CrysLLMGen</b> Accepted at <a href="https://neurips.cc/" target="_blank">NeurIPS 2025</a></li>
-<!--                        <li><b>Sep, 2025</b> Successfully Delivered PhD Synopsis Seminar. [<a href="https://youtu.be/bG-o1pxvNUk" target="">Video</a>]</li>-->
-                        <li><b>Apr, 2025</b> Attened ICLR 2025 and Presented Our work <b>TGDMat</b>
-                                                [<a href="../assets/pdf/ICLR2025/ICLR_2025_Poster.pdf" target="">Poster</a>]
-                                                [<a href="https://youtu.be/u0BFqDiOoVs" target="">Vlog</a>]</li>
-                        <li><b>Jan, 2025</b> Our work <b>TGDMat</b> Accepted at <a href="https://iclr.cc/" target="_blank">ICLR 2025</a></li>
-<!--                        <li><b>Dec, 2024</b> Honoured to be nominated as one of the top reviewers at <a href="https://www.linkedin.com/posts/log-conference_top-reviewers-of-log-2024-thank-you-activity-7268368133713719296-AN3L?utm_source=share&utm_medium=member_desktop" target="_blank">LOG 2024</a></li>-->
-<!--                        <li><b>Aug, 2024</b> Presented PhD work at <a href="https://kdd2024.kdd.org/call-for-phd-consortium/" target="_blank">KDD 2024 PhD Consortium</a>-->
-<!--                                                [<a href="https://youtu.be/iXZGrHafP-8" target="_blank">Vlog</a>]</li>-->
-<!--                        <li><b>Jul, 2024</b> Participated in the <a href="https://logml.ai" target="_blank">LOGML Summer School 2024</a>-->
-<!--                                                [<a href="https://youtu.be/BY3nw3pUIKI" target="_blank">Vlog</a>]</li>-->
-<!--                        <li><b>Jan, 2024</b> Attended Research Week with Google-2024, at Bangalore, 29th-31st January.</li>-->
-<!--                        <li> Attened UAI-2023 and Presented Our work "CrysMMNet"-->
-<!--                                        [<a href="../assets/pdf/UAI2023/605_das.pdf" target="">Poster</a>]-->
-<!--                                        [<a href="https://youtu.be/dJSCCG31mEI" target="">Vlog</a>]</li>-->
-<!--                        <li> Received Google Travel Grant for UAI-2023 Conference.</li>-->
-<!--                        <li> Successfully Delivered PhD Registration Seminar-->
-<!--                                    [<a href="../assets/pdf/Registration/slides.pdf" target="">Slides</a>]</li>-->
-<!--                        <li> Our work "CrysMMNet" Accepted in UAI-2023-->
-<!--                                        [<a href="https://openreview.net/pdf?id=06jLJiUAKX" target="">Paper</a>]-->
-<!--                                        [<a href="https://github.com/kdmsit/crysmmnet" target="">Code</a>]</li>-->
-<!--                        <li> "CrysGNN" Accepted in <a href="https://www.ml4materials.com/" target="_blank">ML4Materials Workshop</a> @ ICLR-2023</li>-->
-<!--                        <li> Presented our Paper "CrysGNN" at AAAI-2023 (Virtually).-->
-<!--                                    [<a href="../assets/pdf/AAAI2023/CrysGNN_Slides.pdf" target="_blank">Slide</a>]-->
-<!--                                    [<a href="https://youtu.be/Vo5ASv3mivk" target="_blank">Vlog</a>]</li>-->
-<!--                        <li> Attended Research Week with Google-2023, at Bangalore, 29th-31st January.-->
-<!--                                    [<a href="https://youtu.be/qN_PjKeO0Uw" target="_blank">Vlog</a>]</li>-->
-<!--                        <li> Attended IndoML-2022, at IITGN, 15-17th December-->
-<!--                                        [<a href="https://youtu.be/odIoxz6G7w4" target="_blank">Vlog</a>]</font></li>-->
-<!--                        <li> One Paper "CrysGNN" Accepted in AAAI-2023-->
-<!--                                        [<a href="../assets/pdf/CrysGNN_Full.pdf" target="_blank">Paper</a>]-->
-<!--                                        [<a href="https://arxiv.org/abs/2301.05852" target="_blank">arXiv</a>]-->
-<!--                                        [<a href="https://github.com/kdmsit/crysgnn.git" target="_blank">Code</a>]-->
-<!--                                        [<a href="https://youtu.be/J8rXFUlDrLk" target="_blank">Video</a>]</li>-->
-<!--                        <li> Honoured to be selected for the prestigious Prime Minister's Research Fellowship (PMRF) December cycle 2021</li>-->
-<!--                        <li> Our work "CrysXPP"" got accepted in NPJ Computational Materials (Nature) Journal.-->
-<!--                                    [<a href="https://arxiv.org/pdf/2104.10869.pdf" target="_blank">Paper</a>]-->
-<!--                                    [<a target="_blank" href="../assets/pdf/CRYSXPP.pdf">Slides</a>]-->
-<!--                                    [<a href="https://www.youtube.com/watch?v=Kyrpj9cSkkM" target="_blank" >Video</a>]-->
-<!--                                    [<a href="https://cnerg-iitkgp.github.io/ml/crysxpp/" target="_blank" >Page</a>]</li>-->
-                    </ul>
-
-            </div>
-
-<!--            <div class="news">-->
-<!--                    <h2>Highlights</h2>-->
-<!--                      <table>-->
-<!--                           <tr>-->
-<!--                          <td class="date">2024</td>-->
-<!--                          <td class="announcement">-->
-<!--                                <ul>-->
-<!--                                    <li><strong> [Sep] : </strong> Honoured to be nominated as one of the top reviewers at <a href="https://www.linkedin.com/posts/log-conference_top-reviewers-of-log-2024-thank-you-activity-7268368133713719296-AN3L?utm_source=share&utm_medium=member_desktop" target="_blank">LOG 2024</a></li><br>-->
-<!--                                    <li><strong> [Sep] : </strong> Served as a reviewer for AI4Mat-NeurIPS-2024</li><br>-->
-<!--                                    <li><strong> [Sep] : </strong> Served as a reviewer for KDD 2024, LOG 2024, AAAI 2025, ICLR 2025</li><br>-->
-<!--                                    <li><strong> [Jul] : </strong> PhD work accepted at <a href="https://kdd2024.kdd.org/call-for-phd-consortium/" target="_blank">KDD 2024 PhD Consortium</a></li><br>-->
-<!--                                    <li><strong> [Mar] : </strong> Selected to participate in the <a href="https://logml.ai" target="_blank">LOGML Summer School 2024</a></li><br>-->
-<!--                                    <li><strong> [Feb] : </strong> Attended Research Week with Google-2024, at Bangalore, 29th-31st January.</li><br>-->
-<!--                                </ul>-->
-<!--                          </td>-->
-<!--                        </tr>-->
-<!--                          <tr>-->
-<!--                          <td class="date">2023</td>-->
-<!--                          <td class="announcement">-->
-<!--                                <ul>-->
-<!--                                    <li><strong> [Sep] : </strong> Serving as a reviewer for AAAI 2024</li><br>-->
-<!--                                    <li><strong> [Sep] : </strong> Serving as a reviewer for TGL Workshop @ NIPS 2023</li><br>-->
-<!--                                    <li><strong> [Aug] : </strong> Attened UAI-2023 and Presented Our work "CrysMMNet"-->
-<!--                                        [<a href="../assets/pdf/UAI2023/605_das.pdf" target="">Poster</a>]-->
-<!--                                        [<a href="https://youtu.be/dJSCCG31mEI" target="">Vlog</a>]</li><br>-->
-<!--                                    <li><strong> [Jul] : </strong> Received Google Travel Grant for UAI-2023 Conference.</li><br>-->
-<!--                                    <li><strong> [Jun] : </strong> Successfully Delivered PhD Registration Seminar-->
-<!--                                    [<a href="../assets/pdf/Registration/slides.pdf" target="">Slides</a>]</li><br>-->
-<!--                                    <li><strong> [May] : </strong> Our work "CrysMMNet" Accepted in UAI-2023-->
-<!--                                        [<a href="https://openreview.net/pdf?id=06jLJiUAKX" target="">Paper</a>]-->
-<!--                                        [<a href="https://github.com/kdmsit/crysmmnet" target="">Code</a>]</li><br>-->
-<!--                                    <li><strong> [Mar] : </strong> "CrysGNN" Accepted in <a href="https://www.ml4materials.com/" target="_blank">ML4Materials Workshop</a> @ ICLR-2023</li><br>-->
-<!--                                    <li><strong> [Feb] : </strong> Serving Reviewer for <a href="https://www.ml4materials.com/" target="_blank">ML4Materials Workshop</a> @ ICLR-2023</li><br>-->
-<!--                                    <li><strong> [Feb] : </strong> Presented our Paper "CrysGNN" at AAAI-2023 (Virtually).-->
-<!--                                    [<a href="../assets/pdf/AAAI2023/CrysGNN_Slides.pdf" target="_blank">Slide</a>]-->
-<!--                                    [<a href="https://youtu.be/Vo5ASv3mivk" target="_blank">Vlog</a>]</li><br>-->
-<!--                                    <li><strong> [Jan] : </strong> Attended Research Week with Google-2023, at Bangalore, 29th-31st January.-->
-<!--                                    [<a href="https://youtu.be/qN_PjKeO0Uw" target="_blank">Vlog</a>]</li><br>-->
-<!--                                </ul>-->
-<!--                          </td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                          <td class="date">2022</td>-->
-<!--                          <td class="announcement">-->
-<!--                                <ul>-->
-<!--				                    <li><strong> [Dec] : </strong > <font size="-0.9"> Attended IndoML-2022, at IITGN, 15-17th December-->
-<!--                                        [<a href="https://youtu.be/odIoxz6G7w4" target="_blank">Vlog</a>]</font></li><br>-->
-<!--                                    <li><strong> [Nov] : </strong> One Paper "CrysGNN" Accepted in AAAI-2023-->
-<!--                                        [<a href="../assets/pdf/CrysGNN_Full.pdf" target="_blank">Paper</a>]-->
-<!--                                        [<a href="https://arxiv.org/abs/2301.05852" target="_blank">arXiv</a>]-->
-<!--                                        [<a href="https://github.com/kdmsit/crysgnn.git" target="_blank">Code</a>]-->
-<!--                                        [<a href="https://youtu.be/J8rXFUlDrLk" target="_blank">Video</a>]</li><br>-->
-<!--                                    <li><strong> [Apr] : </strong> Honoured to be selected for the prestigious Prime Minister's Research Fellowship (PMRF) December cycle 2021</li><br>-->
-<!--                                    <li><strong> [Jan] : </strong> Our work on Crystal Graphs got accepted in NPJ Computational Materials (Nature) Journal.-->
-<!--                                    [<a href="https://arxiv.org/pdf/2104.10869.pdf" target="_blank">Paper</a>]-->
-<!--                                    [<a target="_blank" href="../assets/pdf/CRYSXPP.pdf">Slides</a>]-->
-<!--                                    [<a href="https://www.youtube.com/watch?v=Kyrpj9cSkkM" target="_blank" >Video</a>]-->
-<!--                                    [<a href="https://cnerg-iitkgp.github.io/ml/crysxpp/" target="_blank" >Page</a>]</li><br>-->
-<!--                                </ul>-->
-
-<!--                          </td>-->
-<!--                         </tr>-->
-<!--                      </table>-->
-
-<!--            </div>-->
-
-  <div class="col three caption">
-    
-  </div>
-</div>
+    <!-- ── HERO ── -->
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Kishalay Das</h1>
+        <div class="bengali">কিশলয় দাস &nbsp;·&nbsp; "tender new leaves of spring"</div>
+        <div class="position">
+          <span class="position-dot"></span>
+          Postdoctoral Associate, Yale University
+        </div>
+        <p>
+          Hola! I'm a researcher working at the intersection of <b>Graph Representation Learning</b>,
+          <b>Geometric Deep Learning</b>, and <b>Generative Modeling</b>, with a strong focus on
+          <b>AI for Science</b> and <b>AI for Medicine</b>. If pronunciation feels tricky, call me <b>KD</b>.
+        </p>
+        <div class="research-tags">
+          <span class="tag">Graph Neural Networks</span>
+          <span class="tag">Geometric Deep Learning</span>
+          <span class="tag">Generative Models</span>
+          <span class="tag">AI for Science</span>
+          <span class="tag">AI for Medicine</span>
+          <span class="tag">Materials Science</span>
         </div>
       </div>
+      <img class="hero-photo" src="assets/img/KD_2.jpeg" alt="Photo of Kishalay Das">
     </div>
 
-    <footer>
-        <tfoot align="center">
-        <a href="https://clustrmaps.com/site/1bidq" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=INowEJFFw80_haaM45UlFC2Wib1YCxnVpH-8ZxPx_0Y&cl=ffffff" width="20" height="10"></a>
-        @ Copyright 2021 Kishalay Das.
-        Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-    </tfoot>
-    </footer>
+    <!-- ── LINKS ── -->
+    <div class="links-row">
+      <a class="pill" href="https://scholar.google.com/citations?user=AMP0uJsAAAAJ&hl=en" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5h3.6v8.1C2.5 18.3 1.7 19.6 1.7 21c0 1.7 1.3 3 3 3s3-1.3 3-3c0-1.4-.8-2.7-2-3.4V9.5h7.6L12 0zm0 0l12 9.5h-3.6v8.1c1.2.7 2 2 2 3.4 0 1.7-1.3 3-3 3s-3-1.3-3-3c0-1.4.8-2.7 2-3.4V9.5h-7.6L12 0z"/></svg>
+        Google Scholar
+      </a>
+      <a class="pill" href="https://www.researchgate.net/profile/Kishalay-Das" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.586 0H4.415A4.415 4.415 0 000 4.415v15.17A4.415 4.415 0 004.415 24h15.17A4.415 4.415 0 0024 19.585V4.415A4.415 4.415 0 0019.585 0zm-6.004 17.43h-1.78v-6.9h1.78v6.9zm-.89-7.874a1.03 1.03 0 110-2.06 1.03 1.03 0 010 2.06zm7.56 7.874h-1.78v-3.35c0-.8-.014-1.83-1.115-1.83-1.116 0-1.287.87-1.287 1.77v3.41h-1.78v-6.9h1.708v.942h.025c.238-.45.82-.924 1.687-.924 1.804 0 2.137 1.187 2.137 2.73v4.152z"/></svg>
+        ResearchGate
+      </a>
+      <a class="pill" href="https://dblp.org/pid/258/3218.html" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><text x="5" y="16" font-size="10" fill="white" font-weight="bold">dblp</text></svg>
+        DBLP
+      </a>
+      <a class="pill" href="https://www.linkedin.com/in/kishalay-das-kd-309850143/" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a class="pill" href="https://github.com/kdmsit" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a class="pill" href="https://youtube.com/user/kishalaydas" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        YouTube
+      </a>
+      <a class="pill" href="https://sharingmyexperiencesite.wordpress.com/" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.109m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.061 1.125.09l1.68 4.605-2.37 7.08L5.354 6.9c.649-.03 1.234-.1 1.234-.1.585-.075.516-.93-.065-.896 0 0-1.746.138-2.874.138-.2 0-.438-.008-.69-.015C4.911 3.15 8.235 1.215 12 1.215c2.809 0 5.365 1.072 7.286 2.833-.046-.003-.091-.009-.141-.009-1.06 0-1.812.923-1.812 1.914 0 .89.513 1.643 1.06 2.531.411.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61zM12 22.784c-1.059 0-2.08-.153-3.048-.437l3.237-9.406 3.315 9.087c.024.053.05.101.078.149C14.311 22.568 13.174 22.784 12 22.784zm0-21.568C5.623 1.216 0.432 6.407 0.432 12.784c0 6.378 5.191 11.569 11.568 11.569 6.378 0 11.567-5.191 11.567-11.569S18.378 1.216 12 1.216z"/></svg>
+        Blog
+      </a>
+      <a class="pill" href="assets/pdf/Kishalay_Das_CV.pdf" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        CV
+      </a>
+    </div>
 
+    <!-- ── ABOUT ── -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am currently a <b>Postdoctoral Associate</b> at <b>Yale University</b>, working under the supervision of
+        <a href="https://krishnaswamylab.org/" target="_blank">Smita Krishnaswamy</a>.
+      </p>
+      <p>
+        Prior to this, I was a <b>Prime Minister's Research Fellow (PMRF)</b> at the
+        <b>Indian Institute of Technology, Kharagpur (2020–2026)</b>, as part of the
+        <a href="https://cnerg-iitkgp.github.io/" target="_blank">Complex Networks Research Group (CNeRG)</a>,
+        advised by <a href="http://www.facweb.iitkgp.ac.in/~niloy/" target="_blank">Prof. Niloy Ganguly</a> and
+        <a href="http://cse.iitkgp.ac.in/~pawang/" target="_blank">Prof. Pawan Goyal</a>.
+      </p>
+      <p>
+        I completed my <b>M.Tech (2020)</b> from the
+        <a href="https://www.csa.iisc.ac.in/" target="_blank">Department of Computer Science and Automation</a>,
+        <b>IISc Bangalore</b>, working with <a href="https://www.csa.iisc.ac.in/people/people-faculty-mnm.html" target="_blank">Prof. M. N. Murty</a>
+        on representation learning for graphs and hypergraphs. My <b>B.Tech (2012)</b> is from
+        <a href="https://msit.edu.in/" target="_blank">Meghnad Saha Institute of Technology</a>, Kolkata.
+      </p>
+      <p>
+        Before academia, I gained industry and research experience at
+        <a href="https://www.isro.gov.in/" target="_blank">ISRO</a>,
+        Tata Consultancy Services, and Accenture.
+      </p>
+      <p>
+        I also create educational content on <a href="https://youtube.com/user/kishalaydas" target="_blank">YouTube</a>.
+      </p>
+    </section>
 
-    <!-- Load jQuery -->
-<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- ── HIGHLIGHTS ── -->
+    <section id="highlights">
+      <h2>Highlights</h2>
+      <ul class="highlights-list">
+        <li class="highlight-item">
+          <span class="hi-date">May 2026</span>
+          <span class="hi-text"><b>CrysPrompt</b> accepted at <a href="https://www.auai.org/uai2026/" target="_blank">UAI 2026</a> <span class="badge">Paper</span></span>
+        </li>
+        <li class="highlight-item">
+          <span class="hi-date">Apr 2026</span>
+          <span class="hi-text"><b>CrysLDNet</b> accepted at <a href="https://icml.cc/" target="_blank">ICML 2026</a> <span class="badge">Paper</span></span>
+        </li>
+        <li class="highlight-item">
+          <span class="hi-date">Apr 2026</span>
+          <span class="hi-text">Joined <a href="https://krishnaswamylab.org/" target="_blank">Smita Krishnaswamy Lab</a> at Yale University as Postdoctoral Associate</span>
+        </li>
+        <li class="highlight-item">
+          <span class="hi-date">Jan 2026</span>
+          <span class="hi-text">Defended Ph.D. thesis — officially <b>Dr. Kishalay Das</b> 🎉</span>
+        </li>
+        <li class="highlight-item">
+          <span class="hi-date">Sep 2025</span>
+          <span class="hi-text"><b>CrysLLMGen</b> accepted at <a href="https://neurips.cc/" target="_blank">NeurIPS 2025</a> <span class="badge">Paper</span></span>
+        </li>
+        <li class="highlight-item">
+          <span class="hi-date">Apr 2025</span>
+          <span class="hi-text">Attended ICLR 2025 and presented <b>TGDMat</b>
+            [<a href="../assets/pdf/ICLR2025/ICLR_2025_Poster.pdf" target="_blank">Poster</a>]
+            [<a href="https://youtu.be/u0BFqDiOoVs" target="_blank">Vlog</a>]
+          </span>
+        </li>
+        <li class="highlight-item">
+          <span class="hi-date">Jan 2025</span>
+          <span class="hi-text"><b>TGDMat</b> accepted at <a href="https://iclr.cc/" target="_blank">ICLR 2025</a> <span class="badge">Paper</span></span>
+        </li>
+      </ul>
+    </section>
 
-<!-- Load Common JS -->
-<script src="https://www.cse.iitb.ac.in/~awasthi/assets/js/common.js"></script>
+    <!-- ── SERVICE ── -->
+    <section id="service">
+      <h2>Academic Service</h2>
+      <div class="service-block">
+        <div class="service-label">Program Committee</div>
+        <div class="service-text">IJCAI 2025 &nbsp;·&nbsp; AAAI 2025 &nbsp;·&nbsp; AAAI 2026</div>
+      </div>
+      <div class="service-block">
+        <div class="service-label">Reviewer</div>
+        <div class="service-text">ICML 2026 &nbsp;·&nbsp; ICLR 2025, 2026 &nbsp;·&nbsp; KDD 2024, 2026 &nbsp;·&nbsp; NeurIPS 2025 &nbsp;·&nbsp; LoG 2024, 2025 &nbsp;·&nbsp; AAAI 2024</div>
+      </div>
+    </section>
 
+    <!-- ── CONTACT ── -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Feel free to reach out — I'm always happy to chat about research, collaborations, or anything in between.</p>
+      <p class="contact-line">
+        📧 <a href="mailto:kishalay.msit@gmail.com">kishalay.msit@gmail.com</a>
+      </p>
+    </section>
 
-<!-- Load KaTeX -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
-<script src="https://www.cse.iitb.ac.in/~awasthi/assets/js/katex.js"></script>
+  </main>
 
+  <footer>
+    <a href="https://clustrmaps.com/site/1bidq" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=INowEJFFw80_haaM45UlFC2Wib1YCxnVpH-8ZxPx_0Y&cl=ffffff" width="20" height="10" alt="Visitor map"></a>
+    <br>
+    &copy; 2026 Kishalay Das &nbsp;·&nbsp;
+    Built with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> &amp;
+    <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a>
+  </footer>
 
-<!-- Include custom icon fonts -->
-<link rel="stylesheet" href="https://www.cse.iitb.ac.in/~awasthi/assets/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://www.cse.iitb.ac.in/~awasthi/assets/css/academicons.min.css">
-
-<!-- Google Analytics -->
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-XXXXXXXXX', 'auto');
-ga('send', 'pageview');
-</script>
-  </body>
-
+</body>
 </html>
