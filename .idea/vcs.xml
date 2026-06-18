@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Postdoc @ Yale/Postdoc Works/Research Work/Graph Generation/hiponet_unsup" vcs="Git" />
   </component>
 </project>
