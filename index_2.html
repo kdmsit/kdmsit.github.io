@@ -43,28 +43,6 @@
       padding: 72px 28px 96px;
     }
 
-    /* NAV */
-    .site-nav {
-      display: flex;
-      gap: 24px;
-      margin-bottom: 56px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 500;
-    }
-    .site-nav a {
-      color: var(--muted);
-      text-decoration: none;
-      padding-bottom: 2px;
-      border-bottom: 1px solid transparent;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .site-nav a:hover { color: var(--ink); }
-    .site-nav a.active {
-      color: var(--ink);
-      border-bottom-color: var(--ink);
-    }
-
     /* HERO */
     .hero {
       display: flex;
@@ -245,20 +223,11 @@
       h1 { font-size: 1.9rem; }
       .news-item { grid-template-columns: 66px 1fr; gap: 0 12px; }
       .service-row { grid-template-columns: 1fr; gap: 2px; }
-      .site-nav { gap: 16px; }
     }
   </style>
 </head>
 <body>
 <div class="page">
-
-  <!-- NAV -->
-  <nav class="site-nav">
-    <a href="index.html" class="active">Home</a>
-    <a href="publications/index.html">Publications</a>
-    <a href="Education/index.html">Education</a>
-    <a href="Experience/index.html">Experience</a>
-  </nav>
 
   <!-- HERO -->
   <div class="hero">
@@ -339,11 +308,11 @@
     <ul class="news-list">
       <li class="news-item">
         <span class="n-date">May 2026</span>
-        <span class="n-text"><b>CrysPrompt</b> accepted at <a href="https://www.auai.org/uai2026/" target="_blank">UAI 2026</a> <span class="conf-tag">Paper</span></span>
+        <span class="n-text"><b>CrysPrompt</b> accepted at <a href="https://www.auai.org/uai2026/" target="_blank">UAI 2026</a> </span>
       </li>
       <li class="news-item">
         <span class="n-date">Apr 2026</span>
-        <span class="n-text"><b>CrysLDNet</b> accepted at <a href="https://icml.cc/" target="_blank">ICML 2026</a> <span class="conf-tag">Paper</span></span>
+        <span class="n-text"><b>CrysLDNet</b> accepted at <a href="https://icml.cc/" target="_blank">ICML 2026</a></span>
       </li>
       <li class="news-item">
         <span class="n-date">Apr 2026</span>
@@ -355,7 +324,7 @@
       </li>
       <li class="news-item">
         <span class="n-date">Sep 2025</span>
-        <span class="n-text"><b>CrysLLMGen</b> accepted at <a href="https://neurips.cc/" target="_blank">NeurIPS 2025</a> <span class="conf-tag">Paper</span></span>
+        <span class="n-text"><b>CrysLLMGen</b> accepted at <a href="https://neurips.cc/" target="_blank">NeurIPS 2025</a></span>
       </li>
       <li class="news-item">
         <span class="n-date">Apr 2025</span>
@@ -366,7 +335,7 @@
       </li>
       <li class="news-item">
         <span class="n-date">Jan 2025</span>
-        <span class="n-text"><b>TGDMat</b> accepted at <a href="https://iclr.cc/" target="_blank">ICLR 2025</a> <span class="conf-tag">Paper</span></span>
+        <span class="n-text"><b>TGDMat</b> accepted at <a href="https://iclr.cc/" target="_blank">ICLR 2025</a></span>
       </li>
     </ul>
   </section>
