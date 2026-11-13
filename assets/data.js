@@ -145,7 +145,7 @@ window.SITE = {
   /* ACADEMIC SERVICE — shown on the home page. */
   service: [
     { role: "Program Committee", items: ["IJCAI 2025", "AAAI 2025", "AAAI 2026"] },
-    { role: "Reviewer", items: ["ICML 2026", "ICLR 2025, 2026", "KDD 2024, 2026", "NeurIPS 2025", "LoG 2024, 2025", "AAAI 2024"] },
+    { role: "Reviewer", items: ["ICML 2026", "ICLR 2025, 2026, 2027", "KDD 2024, 2026", "NeurIPS 2025, 2026", "LoG 2024, 2025", "AAAI 2024"] },
   ],
 
   /* JOURNEY (newest first) — education and positions on one timeline. */
@@ -189,6 +189,12 @@ window.SITE = {
         "Conducted pre-launch simulations, flight dynamics reviews, and LEOP special activities.",
         "Developed web interfaces and Android applications for spacecraft control and monitoring.",
       ],
+    },
+    {
+      period: "Apr 2015 – Mar 2017", kind: "GATE",
+      role: "GATE Preparation",
+      org: "GATE CSE", location: "",
+      points: ["Secured All India Rank (AIR) 37 in GATE CSE 2017."],
     },
     {
       period: "Mar 2013 – Apr 2015", kind: "Industry",
