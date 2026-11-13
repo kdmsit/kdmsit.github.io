@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Education — Kishalay Das</title>
+  <meta name="description" content="Academic background of Kishalay Das — IIT Kharagpur, IISc Bangalore, WBUT Kolkata.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #FAFAF8;
+      --surface:   #F0F4FB;
+      --yale:      #00356b;
+      --yale-light:#4a7fc1;
+      --ink:       #1a1f2e;
+      --muted:     #5a6480;
+      --border:    #dde3f0;
+      --accent:    #c8a84b;
+      --radius:    10px;
+      --max-w:     780px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--yale);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--yale); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      margin-bottom: 48px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      color: var(--ink);
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    /* vertical line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 108px;
+      top: 12px;
+      bottom: 12px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .edu-entry {
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 0 28px;
+      padding-bottom: 36px;
+      position: relative;
+    }
+    .edu-entry:last-child { padding-bottom: 0; }
+
+    /* dot on the line */
+    .edu-entry::after {
+      content: '';
+      position: absolute;
+      left: 101px;
+      top: 13px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--yale);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 1.5px var(--yale);
+    }
+
+    .edu-period {
+      padding-top: 10px;
+      text-align: right;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+      padding-right: 4px;
+    }
+
+    .edu-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .edu-card:hover {
+      border-color: var(--yale-light);
+      box-shadow: 0 2px 16px rgba(0,53,107,0.07);
+    }
+
+    .edu-degree {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .edu-degree .deg-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 5px;
+      background: var(--yale);
+      color: white;
+      letter-spacing: 0.03em;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+    .edu-institution {
+      font-size: 0.88rem;
+      color: var(--yale);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .edu-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .meta-chip b { color: var(--ink); font-weight: 600; }
+
+    .edu-thesis {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.55;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .edu-thesis strong {
+      color: var(--ink);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--yale); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .timeline::before { left: 72px; }
+      .edu-entry { grid-template-columns: 72px 1fr; gap: 0 16px; }
+      .edu-entry::after { left: 65px; }
+      .edu-period { font-size: 0.68rem; }
+      .nav-links { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="../index.html">KD</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../publications/index.html">Publications</a></li>
+        <li><a href="#" class="active">Education</a></li>
+        <li><a href="../Experience/index.html">Experience</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="page-header">
+      <h1>Education</h1>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Ph.D. -->
+      <div class="edu-entry">
+        <div class="edu-period">2020<br>– 2026</div>
+        <div class="edu-card">
+          <div class="edu-degree">
+            <span class="deg-tag">Ph.D.</span>Computer Science &amp; Engineering
+          </div>
+          <div class="edu-institution">Indian Institute of Technology Kharagpur</div>
+          <div class="edu-meta">
+            <span class="meta-chip">CGPA <b>9.5 / 10</b></span>
+            <span class="meta-chip">Advisors <b>Prof. Niloy Ganguly &amp; Prof. Pawan Goyal</b></span>
+            <span class="meta-chip">Prime Minister's Research Fellow (PMRF)</span>
+          </div>
+          <div class="edu-thesis">
+            Thesis: <strong>"Robust &amp; Efficient AI Frameworks for Scalable Materials Design and Property Prediction"</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- M.Tech -->
+      <div class="edu-entry">
+        <div class="edu-period">2018<br>– 2020</div>
+        <div class="edu-card">
+          <div class="edu-degree">
+            <span class="deg-tag">M.Tech</span>Computer Science &amp; Automation
+          </div>
+          <div class="edu-institution">Indian Institute of Science (IISc), Bangalore</div>
+          <div class="edu-meta">
+            <span class="meta-chip">CGPA <b>8.8 / 10</b></span>
+            <span class="meta-chip">Advisor <b>Prof. M. Narasimha Murty</b></span>
+          </div>
+          <div class="edu-thesis">
+            Thesis: <strong>"Graph Neural Network For Embedding Hypergraphs by Learning Line Graph Expansion"</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- B.Tech -->
+      <div class="edu-entry">
+        <div class="edu-period">2008<br>– 2012</div>
+        <div class="edu-card">
+          <div class="edu-degree">
+            <span class="deg-tag">B.Tech</span>Computer Science &amp; Engineering
+          </div>
+          <div class="edu-institution">Meghnad Saha Institute of Technology, West Bengal University of Technology, Kolkata</div>
+          <div class="edu-meta">
+            <span class="meta-chip">CGPA <b>8.37 / 10</b></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <a href="https://clustrmaps.com/site/1bidq" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=INowEJFFw80_haaM45UlFC2Wib1YCxnVpH-8ZxPx_0Y&cl=ffffff" width="20" height="10" alt="Visitor map"></a>
+    <br>
+    &copy; 2026 Kishalay Das &nbsp;·&nbsp;
+    Built with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> &amp;
+    <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a>
+  </footer>
+
+</body>
+</html>
