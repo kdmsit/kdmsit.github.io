@@ -20,8 +20,9 @@ window.SITE = {
     { network: "youtube",       url: "https://youtube.com/user/kishalaydas" },
   ],
 
-  /* PUBLICATIONS (newest first). Fixed blocks: Paper · arXiv · OpenReview · Code · Poster
-     ("" = greyed out). Extra links (Slides, Video, Blog…) go in `links`.
+  /* PUBLICATIONS (newest first). Buttons shown: Paper (uses `arxiv` if set, else `paper`),
+     Code ("" = greyed out), Poster (only if set), and a Vlog or Video entry from `links`.
+     Other fields (openreview, Slides, Blog…) are kept but not shown.
      Add `bibtex: \`...\`` to show a Cite button. */
   publications: [
     {
@@ -29,14 +30,14 @@ window.SITE = {
       title: "Model Agnostic Graph Prompt Learning for Crystal Property Prediction",
       authors: "Shrimon Mukherjee*, Kishalay Das*, Pawan Goyal, Partha Basuchowdhuri, Niloy Ganguly",
       venue: "Conference on Uncertainty in Artificial Intelligence (UAI)",
-      paper: "", arxiv: "", openreview: "", code: "", poster: "",
+      paper: "https://arxiv.org/abs/2607.08996", arxiv: "https://arxiv.org/abs/2607.08996", openreview: "", code: "https://github.com/shrimonmuke0202/Prompt", poster: "",
     },
     {
       year: 2026, badge: "ICML",
       title: "Latent Diffusion Pretraining for Crystal Property Prediction",
       authors: "Shrimon Mukherjee*, Kishalay Das*, Pawan Goyal, Partha Basuchowdhuri, Niloy Ganguly",
       venue: "International Conference on Machine Learning (ICML) · also AI4Mat Workshop @ ICLR 2025",
-      paper: "", arxiv: "", openreview: "", code: "", poster: "",
+      paper: "https://arxiv.org/abs/2606.00776", arxiv: "https://arxiv.org/abs/2606.00776", openreview: "", code: "https://github.com/shrimonmuke0202/CrysLDNet", poster: "",
     },
     {
       year: 2025, badge: "NeurIPS",
@@ -56,7 +57,7 @@ window.SITE = {
       venue: "International Conference on Learning Representations (ICLR)",
       paper: "https://arxiv.org/abs/2503.00522",
       arxiv: "https://arxiv.org/abs/2503.00522",
-      openreview: "https://openreview.net/pdf?id=AkBrb7yQ0G",
+      openreview: "https://openreview.net/forum?id=AkBrb7yQ0G",
       code: "https://github.com/kdmsit/TGDMat",
       poster: "assets/pdf/ICLR2025/ICLR_2025_Poster.pdf",
       links: [{ label: "Vlog", url: "https://youtu.be/u0BFqDiOoVs" }],

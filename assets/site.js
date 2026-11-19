@@ -74,16 +74,20 @@
       return '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + label + "</a>";
     return '<span class="off" aria-disabled="true" title="' + label + ' — not available">' + label + "</span>";
   }
+  /* year goes right after the main venue, before extras like "also … Workshop" */
+  function venueLine(p) {
+    var parts = String(p.venue || "").split(" · ").filter(Boolean);
+    if (p.year) parts.splice(Math.min(1, parts.length), 0, String(p.year));
+    return parts.map(esc).join(" · ");
+  }
   function pubCard(p, idx) {
-    // fixed blocks shown on every tile (greyed when no link); fill URLs in data.js
-    var links = pubLink("Paper", p.paper) + pubLink("arXiv", p.arxiv) +
-                pubLink("OpenReview", p.openreview) + pubLink("Code", p.code) +
-                pubLink("Poster", p.poster);
-    // optional extra links (e.g. PDF, bioRxiv) via a `links: [{label,url}]` array
-    var extra = (p.links || []).filter(function (l) { return l && l.url && l.url !== "#"; })
-      .map(function (l) {
-        return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a>";
-      }).join("");
+    // buttons: Paper (arXiv if there is one, else the publisher link) and Code
+    // always (greyed when empty); Poster and Vlog/Video only when available.
+    function has(u) { return u && u !== "#"; }
+    var links = pubLink("Paper", has(p.arxiv) ? p.arxiv : p.paper) + pubLink("Code", p.code);
+    if (has(p.poster)) links += pubLink("Poster", p.poster);
+    var vid = (p.links || []).filter(function (l) { return l && has(l.url) && /^(vlog|video)$/i.test(l.label); })[0];
+    var extra = vid ? '<a href="' + esc(vid.url) + '" target="_blank" rel="noopener">' + esc(vid.label) + "</a>" : "";
     var cite = p.bibtex ? '<button class="pub__cite" type="button" data-cite="' + idx + '">Cite</button>' : "";
     var bib = p.bibtex ? '<pre class="pub__bibtex" id="bibtex-' + idx + '" hidden>' + esc(p.bibtex) + "</pre>" : "";
     return '<li class="pub">' +
@@ -91,7 +95,7 @@
         '<div class="pub__body">' +
           '<h3 class="pub__title">' + esc(p.title) + "</h3>" +
           '<p class="pub__authors">' + boldName(p.authors) + "</p>" +
-          '<p class="pub__venue">' + esc(p.venue || "") + (p.year ? " · " + esc(p.year) : "") + "</p>" +
+          '<p class="pub__venue">' + venueLine(p) + "</p>" +
           '<div class="pub__links">' + links + extra + cite + "</div>" + bib +
         "</div></li>";
   }
